@@ -1,10 +1,12 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import MainCard from "./components/MainCard"
+import Card from "./components/Card"
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <MainCard />
+      <Card />
     </div>
   );
 }
