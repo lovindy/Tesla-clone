@@ -26,7 +26,6 @@ function Card({ imgURL, title, financingText, leaseText, textColor }) {
     </div>
   );
 }
-
 function CardsContainer() {
   return (
     <div>
