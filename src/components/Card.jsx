@@ -1,6 +1,6 @@
 import React from "react";
 import cardsData from "../assets/CardData";
-import ButtonTesla from "./Button";
+import ButtonTesla from "./ButtonDesign";
 function Card({ imgURL, title, financingText, leaseText, textColor }) {
   return (
     <div
