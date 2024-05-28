@@ -17,7 +17,7 @@ function Navbar() {
           <Tesla />
         </a>
 
-        <ul className="hidden md:flex font-medium text-sm">
+        <ul className="hidden lg:flex font-medium text-sm">
           {/* Vehicles */}
           <motion.li
             className="relative group"
@@ -122,7 +122,7 @@ function Navbar() {
           </li>
         </ul>
 
-        <ul className="hidden md:flex space-x-4 text-2xl">
+        <ul className="hidden lg:flex space-x-4 text-2xl">
           <li>
             <a href="#">
               <CiCircleQuestion
@@ -148,7 +148,7 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <button className="block md:hidden px-4 py-1 rounded-md bg-[#d2ddea]">
+        <button className="block lg:hidden px-4 py-1 rounded-md bg-[#d2ddea]">
           Menu
         </button>
       </div>
@@ -178,28 +178,40 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-20 "
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-20 px-36"
             initial={{ opacity: 0, y: -40, display: "none" }}
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
             transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
             onMouseLeave={() => setHoverDropdown(false)}>
-            <div className="max-w-[1200px] mx-auto flex items-start gap-20">
+            <div className="max-w-[1400px] mx-auto flex items-start gap-16">
               {/* Cars */}
               <div className="grid grid-cols-4 gap-10">
                 {NavData.vehicles.map((item) => (
                   <li key={item.Model} className="px-4 py-2 list-none">
-                    <img src={item.NavImgURL} alt={item.Model}/>
-                    {item.Model}
+                    <img src={item.NavImgURL} alt={item.Model} />
+                    <p className="text-center">{item.Model}</p>
+                    <a
+                      href="#"
+                      className="flex justify-center items-center space-x-4">
+                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:no-underline">
+                        Learn
+                      </span>
+                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:no-underline">
+                        Order
+                      </span>
+                    </a>
                   </li>
                 ))}
               </div>
               {/* line */}
               <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
               {/* List item */}
-              <ul className="space-y-2">
+              <ul className="space-y-1 pt-2">
                 {navLinks.map((link, index) => (
-                  <li className="" key={index}>{link}</li>
+                  <li className="text-nowrap hover:underline underline-offset-4 duration-300" key={index}>
+                    <a href="#">{link}</a>
+                  </li>
                 ))}
               </ul>
             </div>

@@ -1,6 +1,14 @@
 const cardsData = [
   {
     imgURL:
+      "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.png",
+    title: "Model Y",
+    financingText: "0.99% APR Financing",
+    leaseText: "From $299/mo¹ Lease After Est. Gas Savings Order Now",
+    textColor: "white",
+  },
+  {
+    imgURL:
       "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-LHD-v2.jpg",
     title: "Model Y",
     financingText: "0.99% APR Financing",
