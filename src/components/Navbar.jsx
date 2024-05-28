@@ -24,7 +24,7 @@ function Navbar() {
             onMouseEnter={() => setHoverDropdown(true)}>
             <a
               href="#vehicles"
-              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Vehicles
             </a>
           </motion.li>
@@ -33,7 +33,7 @@ function Navbar() {
           <li className="relative group">
             <a
               href="#energy"
-              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Energy
             </a>
             <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
@@ -56,7 +56,7 @@ function Navbar() {
           <li className="relative group">
             <a
               href="#changing"
-              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Changing
             </a>
             <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
@@ -79,7 +79,7 @@ function Navbar() {
           <li className="relative group">
             <a
               href="#discover"
-              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Discover
             </a>
             <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
@@ -102,7 +102,7 @@ function Navbar() {
           <li className="relative group">
             <a
               href="#shop"
-              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Shop
             </a>
             <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
