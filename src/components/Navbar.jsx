@@ -5,215 +5,209 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { CiCircleQuestion } from "react-icons/ci";
 import NavData from "../assets/NavData.jsx";
 import { useState } from "react";
-import {motion, AnimatePresence} from 'framer-motion'
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [hoverDropdown, setHoverDropdown] = useState(false);
 
   return (
     <div>
-    <div className="mx-auto relative z-[100] py-4 px-4 flex items-center justify-between">
-      <a href="#">
-        <Tesla />
-      </a>
+      <div className="mx-auto relative z-[100] py-4 px-4 flex items-center justify-between">
+        <a href="#">
+          <Tesla />
+        </a>
 
-      <ul className="hidden md:flex font-medium text-sm">
-        {/* Vehicles */}
-        <motion.li className="relative group" onMouseEnter={() => setHoverDropdown(true)} >
-          <a
-            href="#vehicles"
-            className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md"
-          >
-            Vehicles
-          </a>
-          {/* <ul className="absolute left-0 right-0 hidden w-[1200px] group-hover:grid grid-cols-3 bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-            {NavData.vehicles.map((item) => (
-              <li key={item.Model} className="px-4 py-2">
-                <a href="#" className="block ">
-                  <img
-                    src={item.NavImgURL}
-                    alt={item.Model}
-                    className="object-cover w-[500px] mr-2"
-                  />
-                  {item.Model}
-                </a>
-              </li>
-            ))}
-          </ul> */}
-          
-        </motion.li>
+        <ul className="hidden md:flex font-medium text-sm">
+          {/* Vehicles */}
+          <motion.li
+            className="relative group"
+            onMouseEnter={() => setHoverDropdown(true)}>
+            <a
+              href="#vehicles"
+              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              Vehicles
+            </a>
+          </motion.li>
 
-        {/* Energy */}
-        <li className="relative group">
-          <a
-            href="#energy"
-            className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md"
-          >
-            Energy
-          </a>
-          <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-            {NavData.energy.map((item) => (
-              <li key={item.Model} className="px-4 py-2">
-                <a href="#" className="block ">
-                  <img
-                    src={item.NavImgURL}
-                    alt={item.Model}
-                    className="object-cover inline-block mr-2"
-                  />
-                  {item.Model}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
+          {/* Energy */}
+          <li className="relative group">
+            <a
+              href="#energy"
+              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              Energy
+            </a>
+            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+              {NavData.energy.map((item) => (
+                <li key={item.Model} className="px-4 py-2">
+                  <a href="#" className="block ">
+                    <img
+                      src={item.NavImgURL}
+                      alt={item.Model}
+                      className="object-cover inline-block mr-2"
+                    />
+                    {item.Model}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
 
-        {/* Changing */}
-        <li className="relative group">
-          <a
-            href="#changing"
-            className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md"
-          >
-            Changing
-          </a>
-          <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-            {NavData.changing.map((item) => (
-              <li key={item.Model} className="px-4 py-2">
-                <a href="#" className="block ">
-                  <img
-                    src={item.NavImgURL}
-                    alt={item.Model}
-                    className="object-cover inline-block mr-2"
-                  />
-                  {item.Model}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
+          {/* Changing */}
+          <li className="relative group">
+            <a
+              href="#changing"
+              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              Changing
+            </a>
+            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+              {NavData.changing.map((item) => (
+                <li key={item.Model} className="px-4 py-2">
+                  <a href="#" className="block ">
+                    <img
+                      src={item.NavImgURL}
+                      alt={item.Model}
+                      className="object-cover inline-block mr-2"
+                    />
+                    {item.Model}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
 
-        {/* Discover */}
-        <li className="relative group">
-          <a
-            href="#discover"
-            className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md"
-          >
-            Discover
-          </a>
-          <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-            {NavData.discover.map((item) => (
-              <li key={item.Model} className="px-4 py-2">
-                <a href="#" className="block ">
-                  <img
-                    src={item.NavImgURL}
-                    alt={item.Model}
-                    className="object-cover inline-block mr-2"
-                  />
-                  {item.Model}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
+          {/* Discover */}
+          <li className="relative group">
+            <a
+              href="#discover"
+              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              Discover
+            </a>
+            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+              {NavData.discover.map((item) => (
+                <li key={item.Model} className="px-4 py-2">
+                  <a href="#" className="block ">
+                    <img
+                      src={item.NavImgURL}
+                      alt={item.Model}
+                      className="object-cover inline-block mr-2"
+                    />
+                    {item.Model}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
 
-        {/* Shop */}
-        <li className="relative group">
-          <a
-            href="#shop"
-            className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md"
-          >
-            Shop
-          </a>
-          <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-            {NavData.shop.map((item) => (
-              <li key={item.Model} className="px-4 py-2">
-                <a href="#" className="block ">
-                  <img
-                    src={item.NavImgURL}
-                    alt={item.Model}
-                    className="object-cover inline-block mr-2"
-                  />
-                  {item.Model}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      </ul>
+          {/* Shop */}
+          <li className="relative group">
+            <a
+              href="#shop"
+              className="hover:bg-[#B4BEC9] px-5 py-[8px] rounded-md">
+              Shop
+            </a>
+            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+              {NavData.shop.map((item) => (
+                <li key={item.Model} className="px-4 py-2">
+                  <a href="#" className="block ">
+                    <img
+                      src={item.NavImgURL}
+                      alt={item.Model}
+                      className="object-cover inline-block mr-2"
+                    />
+                    {item.Model}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        </ul>
 
-      <ul className="hidden md:flex space-x-4 text-2xl">
-        <li>
-          <a href="#">
-            <CiCircleQuestion
-              aria-label="Help"
-              className="hover:bg-[#B4BEC9] rounded-md"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <AiOutlineGlobal
-              aria-label="Global"
-              className="hover:bg-[#B4BEC9] rounded-md"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <IoPersonCircleOutline
-              aria-label="Profile"
-              className="hover:bg-[#B4BEC9] rounded-md"
-            />
-          </a>
-        </li>
-      </ul>
-      <button className="block md:hidden px-4 py-1 rounded-md bg-[#d2ddea]">
-        Menu
-      </button>
-    </div>
+        <ul className="hidden md:flex space-x-4 text-2xl">
+          <li>
+            <a href="#">
+              <CiCircleQuestion
+                aria-label="Help"
+                className="hover:bg-[#B4BEC9] rounded-md"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <AiOutlineGlobal
+                aria-label="Global"
+                className="hover:bg-[#B4BEC9] rounded-md"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <IoPersonCircleOutline
+                aria-label="Profile"
+                className="hover:bg-[#B4BEC9] rounded-md"
+              />
+            </a>
+          </li>
+        </ul>
+        <button className="block md:hidden px-4 py-1 rounded-md bg-[#d2ddea]">
+          Menu
+        </button>
+      </div>
 
-    <DropDown hoverDropdown={hoverDropdown} setHoverDropdown={setHoverDropdown}/>
+      <DropDown
+        hoverDropdown={hoverDropdown}
+        setHoverDropdown={setHoverDropdown}
+      />
     </div>
   );
 }
 
-const DropDown = ({hoverDropdown, setHoverDropdown}) => {
+const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
   const navLinks = [
-    'Model S', 'Model 3', 'Model X', 'Model Y', 'Cybertruck', 'Roadster', 'Powerwall',
-  ]
-
+    "Inventory",
+    "Used Cars",
+    "Demo Drive",
+    "Trade-in",
+    "Compare",
+    "Help Me Charge",
+    "Fleet",
+    "Semi",
+    "Roadster",
+  ];
   return (
     <>
-    <AnimatePresence>
-      {hoverDropdown && (
-        <motion.div className="w-full fixed top-0 bg-white pt-40 pb-20 "
-        initial={{ opacity: 0, y: -40 , display: 'none' }}
-        animate={{opacity: 1, y: 0, display: 'block'}}
-        exit={{opacity: 0, y: -40, display: 'none' }}
-        transition={{duration: 0.9, ease: [0.76, 0, 0.24, 1]}}
-        onMouseLeave={() => setHoverDropdown(false)}
-        >
-        <div className="max-w-[1000px] mx-auto flex items-start gap-20">
-          {/* Cars */}
-          <div className="grid grid-cols-4 gap-10">
-              <div className="w-40 h-40 bg-gray-500"></div>
-              <div className="w-40 h-40 bg-gray-500"></div>
-              <div className="w-40 h-40 bg-gray-500"></div>
-              <div className="w-40 h-40 bg-gray-500"></div>
-          </div>
-          {/* List item */}
-          <ul>
-            {navLinks.map((link, index) => (
-              <li key={index}>{link}</li>
-            ))}
-          </ul>
-        </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-   
-   
+      <AnimatePresence>
+        {hoverDropdown && (
+          <motion.div
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-20 "
+            initial={{ opacity: 0, y: -40, display: "none" }}
+            animate={{ opacity: 1, y: 0, display: "block" }}
+            exit={{ opacity: 0, y: -40, display: "none" }}
+            transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+            onMouseLeave={() => setHoverDropdown(false)}>
+            <div className="max-w-[1200px] mx-auto flex items-start gap-20">
+              {/* Cars */}
+              <div className="grid grid-cols-4 gap-10">
+                {NavData.vehicles.map((item) => (
+                  <li key={item.Model} className="px-4 py-2 list-none">
+                    <img src={item.NavImgURL} alt={item.Model}/>
+                    {item.Model}
+                  </li>
+                ))}
+              </div>
+              {/* line */}
+              <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
+              {/* List item */}
+              <ul className="space-y-2">
+                {navLinks.map((link, index) => (
+                  <li className="" key={index}>{link}</li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
 export default Navbar;
