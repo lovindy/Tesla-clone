@@ -189,7 +189,7 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-20 px-36"
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-8 px-36"
             initial={{ opacity: 0, y: -40, display: "none" }}
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
