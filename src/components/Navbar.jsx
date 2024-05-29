@@ -181,7 +181,7 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
               <ul className="space-y-1 pt-2">
                 {navLinks.map((link, index) => (
                   <li
-                    className="text-nowrap hover:underline underline-offset-4 duration-300"
+                    className="text-nowrap hover:underline decoration-2 underline-offset-4 duration-100 transform hover:scale-105"
                     key={index}>
                     <a href="#">{link}</a>
                   </li>
