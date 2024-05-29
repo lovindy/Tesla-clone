@@ -30,96 +30,48 @@ function Navbar() {
           </motion.li>
 
           {/* Energy */}
-          <li className="relative group">
+          <motion.li
+            className="relative group"
+            onMouseEnter={() => setHoverDropdown(true)}>
             <a
-              href="#energy"
+              href="#vehicles"
               className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Energy
             </a>
-            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-              {NavData.energy.map((item) => (
-                <li key={item.Model} className="px-4 py-2">
-                  <a href="#" className="block ">
-                    <img
-                      src={item.NavImgURL}
-                      alt={item.Model}
-                      className="object-cover inline-block mr-2"
-                    />
-                    {item.Model}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
+          </motion.li>
 
           {/* Changing */}
-          <li className="relative group">
+          <motion.li
+            className="relative group"
+            onMouseEnter={() => setHoverDropdown(true)}>
             <a
-              href="#changing"
+              href="#vehicles"
               className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
-              Changing
+              Charging
             </a>
-            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-              {NavData.changing.map((item) => (
-                <li key={item.Model} className="px-4 py-2">
-                  <a href="#" className="block ">
-                    <img
-                      src={item.NavImgURL}
-                      alt={item.Model}
-                      className="object-cover inline-block mr-2"
-                    />
-                    {item.Model}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
+          </motion.li>
 
           {/* Discover */}
-          <li className="relative group">
+          <motion.li
+            className="relative group"
+            onMouseEnter={() => setHoverDropdown(true)}>
             <a
-              href="#discover"
+              href="#vehicles"
               className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Discover
             </a>
-            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-              {NavData.discover.map((item) => (
-                <li key={item.Model} className="px-4 py-2">
-                  <a href="#" className="block ">
-                    <img
-                      src={item.NavImgURL}
-                      alt={item.Model}
-                      className="object-cover inline-block mr-2"
-                    />
-                    {item.Model}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
+          </motion.li>
 
           {/* Shop */}
-          <li className="relative group">
+          <motion.li
+            className="relative group"
+            onMouseEnter={() => setHoverDropdown(true)}>
             <a
-              href="#shop"
+              href="#vehicles"
               className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
               Shop
             </a>
-            <ul className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg mt-2 rounded-md transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-              {NavData.shop.map((item) => (
-                <li key={item.Model} className="px-4 py-2">
-                  <a href="#" className="block ">
-                    <img
-                      src={item.NavImgURL}
-                      alt={item.Model}
-                      className="object-cover inline-block mr-2"
-                    />
-                    {item.Model}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
+          </motion.li>
         </ul>
 
         <ul className="hidden lg:flex space-x-4 text-2xl">
