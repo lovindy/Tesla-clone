@@ -9,10 +9,10 @@ function Card({ imgURL, title, financingText, leaseText, textColor }) {
       <div className="space-y-[450px]">
         <div className={textColor}>
           <h2 className="font-medium text-5xl">{title}</h2>
-          <p className="text-2xl tracking-wider pt-4 pb-2 underline underline-offset-2">
+          <p className="text-lg py-2 font-medium tracking-wider">
             {financingText}
           </p>
-          <p className="text-base">{leaseText}</p>
+          <p className="text-[10px]">{leaseText}</p>
         </div>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
           <ButtonTesla className="bg-white hover:bg-gray-200 text-black transition duration-300 ease-in-out">
