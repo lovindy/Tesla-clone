@@ -16,7 +16,7 @@ const Footer = () => {
                 <p>{mainText}</p>
                 <p>
                   <a href="#">
-                    <span className="underline-offset-2 underline">
+                    <span className="underline-offset-4 underline hover:decoration-2 duration-700">
                       Learn about est. gas savings.
                     </span>
                   </a>

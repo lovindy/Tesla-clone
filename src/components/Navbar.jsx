@@ -165,10 +165,10 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
                     <a
                       href="#"
                       className="flex justify-center items-center space-x-4">
-                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:no-underline">
+                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:decoration-2 decoration-black">
                         Learn
                       </span>
-                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:no-underline">
+                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:decoration-2 decoration-black">
                         Order
                       </span>
                     </a>
