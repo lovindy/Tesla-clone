@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [hoverDropdown, setHoverDropdown] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState(""); // Initialize as a string or null depending on your logic
 
   const handleMouseEnter = (category) => {
     setActiveCategory(category);
@@ -27,11 +27,13 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("vehicles")}
-            onMouseLeave={() => activeCategory(false)}
+            onMouseLeave={() => activeCategory("")} 
           >
             <a
               href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "vehicles" ? "bg-[#B4BEC9]" : ""
+              }`}
             >
               Vehicles
             </a>
@@ -41,11 +43,13 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("energy")}
-            onMouseLeave={() => activeCategory(false)}
+            onMouseLeave={() => activeCategory("")}
           >
             <a
               href="#energy"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "energy" ? "bg-[#B4BEC9]" : ""
+              }`}
             >
               Energy
             </a>
@@ -55,11 +59,13 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("charging")}
-            onMouseLeave={() => activeCategory(false)}
+            onMouseLeave={() => activeCategory("")}
           >
             <a
               href="#charging"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "charging" ? "bg-[#B4BEC9]" : ""
+              }`}
             >
               Charging
             </a>
@@ -69,11 +75,13 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("discover")}
-            onMouseLeave={() => activeCategory(false)}
+            onMouseLeave={() => activeCategory("")}
           >
             <a
               href="#discover"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "discover" ? "bg-[#B4BEC9]" : ""
+              }`}
             >
               Discover
             </a>
@@ -83,11 +91,13 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("shop")}
-            onMouseLeave={() => activeCategory(false)}
+            onMouseLeave={() => activeCategory("")}
           >
             <a
               href="#shop"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "shop" ? "bg-[#B4BEC9]" : ""
+              }`}
             >
               Shop
             </a>
