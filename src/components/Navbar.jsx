@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Tesla from "../assets/tesla.jsx";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { CiCircleQuestion } from "react-icons/ci";
 import NavData from "../assets/NavData.jsx";
-import { useState } from "react";
-import { motion, AnimatePresence, delay } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [hoverDropdown, setHoverDropdown] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("");
+
+  const handleMouseEnter = (category) => {
+    setActiveCategory(category);
+    setHoverDropdown(true);
+  };
 
   return (
     <div>
@@ -21,10 +26,13 @@ function Navbar() {
           {/* Vehicles */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => setHoverDropdown(true)}>
+            onMouseEnter={() => handleMouseEnter("vehicles")}
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <a
               href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+            >
               Vehicles
             </a>
           </motion.li>
@@ -32,21 +40,27 @@ function Navbar() {
           {/* Energy */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => setHoverDropdown(true)}>
+            onMouseEnter={() => handleMouseEnter("energy")}
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <a
-              href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
+              href="#energy"
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+            >
               Energy
             </a>
           </motion.li>
 
-          {/* Changing */}
+          {/* Charging */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => setHoverDropdown(true)}>
+            onMouseEnter={() => handleMouseEnter("charging")}
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <a
-              href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
+              href="#charging"
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+            >
               Charging
             </a>
           </motion.li>
@@ -54,10 +68,13 @@ function Navbar() {
           {/* Discover */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => setHoverDropdown(true)}>
+            onMouseEnter={() => handleMouseEnter("discover")}
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <a
-              href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
+              href="#discover"
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+            >
               Discover
             </a>
           </motion.li>
@@ -65,10 +82,13 @@ function Navbar() {
           {/* Shop */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => setHoverDropdown(true)}>
+            onMouseEnter={() => handleMouseEnter("shop")}
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <a
-              href="#vehicles"
-              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md">
+              href="#shop"
+              className="hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md"
+            >
               Shop
             </a>
           </motion.li>
@@ -108,6 +128,7 @@ function Navbar() {
       <DropDown
         hoverDropdown={hoverDropdown}
         setHoverDropdown={setHoverDropdown}
+        activeCategory={activeCategory}
       />
 
       <AnimatePresence>
@@ -117,14 +138,15 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed w-full h-screen top-0 z-[98] bg-black/50"></motion.div>
+            className="fixed w-full h-screen top-0 z-[98] bg-black/50"
+          ></motion.div>
         )}
       </AnimatePresence>
     </div>
   );
 }
 
-const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
+const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
   const navLinks = [
     "Inventory",
     "Used Cars",
@@ -136,6 +158,7 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
     "Semi",
     "Roadster",
   ];
+
   return (
     <>
       <AnimatePresence>
@@ -146,25 +169,27 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            onMouseLeave={() => setHoverDropdown(false)}>
+            onMouseLeave={() => setHoverDropdown(false)}
+          >
             <div className="max-w-[1400px] mx-auto flex items-start gap-16">
-              {/* Cars */}
               <div className="grid xl:grid-cols-4 grid-cols-3">
-                {NavData.vehicles.map((item, index) => (
+                {NavData[activeCategory]?.map((item, index) => (
                   <motion.li
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{
                       duration: 0.6,
-                      delay: index * 0.2, // Delay each item based on its index
+                      delay: index * 0.2,
                     }}
                     key={item.Model}
-                    className="px-4 py-2 list-none">
+                    className="px-4 py-2 list-none"
+                  >
                     <img src={item.NavImgURL} alt={item.Model} />
                     <p className="text-center">{item.Model}</p>
                     <a
                       href="#"
-                      className="flex justify-center items-center space-x-4">
+                      className="flex justify-center items-center space-x-4"
+                    >
                       <span className="text-black/50 text-[14px] underline-offset-2 underline hover:decoration-2 decoration-black">
                         Learn
                       </span>
@@ -175,14 +200,13 @@ const DropDown = ({ hoverDropdown, setHoverDropdown }) => {
                   </motion.li>
                 ))}
               </div>
-              {/* line */}
               <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
-              {/* List item */}
               <ul className="space-y-1 pt-2">
                 {navLinks.map((link, index) => (
                   <li
                     className="text-nowrap hover:underline decoration-2 underline-offset-4 duration-100 transform hover:scale-105"
-                    key={index}>
+                    key={index}
+                  >
                     <a href="#">{link}</a>
                   </li>
                 ))}
