@@ -27,7 +27,7 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("vehicles")}
-            onMouseLeave={() => setHoverDropdown(false)}
+            onMouseLeave={() => activeCategory(false)}
           >
             <a
               href="#vehicles"
@@ -41,7 +41,7 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("energy")}
-            onMouseLeave={() => setHoverDropdown(false)}
+            onMouseLeave={() => activeCategory(false)}
           >
             <a
               href="#energy"
@@ -55,7 +55,7 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("charging")}
-            onMouseLeave={() => setHoverDropdown(false)}
+            onMouseLeave={() => activeCategory(false)}
           >
             <a
               href="#charging"
@@ -69,7 +69,7 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("discover")}
-            onMouseLeave={() => setHoverDropdown(false)}
+            onMouseLeave={() => activeCategory(false)}
           >
             <a
               href="#discover"
@@ -83,7 +83,7 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("shop")}
-            onMouseLeave={() => setHoverDropdown(false)}
+            onMouseLeave={() => activeCategory(false)}
           >
             <a
               href="#shop"
