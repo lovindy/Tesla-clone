@@ -27,14 +27,12 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("vehicles")}
-            onMouseLeave={() => activeCategory("")} 
-          >
+            onMouseLeave={() => activeCategory("")}>
             <a
               href="#vehicles"
-              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "vehicles" ? "bg-[#B4BEC9]" : ""
-              }`}
-            >
+              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "vehicles" ? "bg-[#f2f2f2]" : ""
+              }`}>
               Vehicles
             </a>
           </motion.li>
@@ -43,14 +41,12 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("energy")}
-            onMouseLeave={() => activeCategory("")}
-          >
+            onMouseLeave={() => activeCategory("")}>
             <a
               href="#energy"
-              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "energy" ? "bg-[#B4BEC9]" : ""
-              }`}
-            >
+              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "energy" ? "bg-[#f2f2f2]" : ""
+              }`}>
               Energy
             </a>
           </motion.li>
@@ -59,14 +55,12 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("charging")}
-            onMouseLeave={() => activeCategory("")}
-          >
+            onMouseLeave={() => activeCategory("")}>
             <a
               href="#charging"
-              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "charging" ? "bg-[#B4BEC9]" : ""
-              }`}
-            >
+              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "charging" ? "bg-[#f2f2f2]" : ""
+              }`}>
               Charging
             </a>
           </motion.li>
@@ -75,14 +69,12 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("discover")}
-            onMouseLeave={() => activeCategory("")}
-          >
+            onMouseLeave={() => activeCategory("")}>
             <a
               href="#discover"
-              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "discover" ? "bg-[#B4BEC9]" : ""
-              }`}
-            >
+              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "discover" ? "bg-[#f2f2f2]" : ""
+              }`}>
               Discover
             </a>
           </motion.li>
@@ -91,14 +83,12 @@ function Navbar() {
           <motion.li
             className="relative group"
             onMouseEnter={() => handleMouseEnter("shop")}
-            onMouseLeave={() => activeCategory("")}
-          >
+            onMouseLeave={() => activeCategory("")}>
             <a
               href="#shop"
-              className={`hover:bg-[#B4BEC9] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "shop" ? "bg-[#B4BEC9]" : ""
-              }`}
-            >
+              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                activeCategory === "shop" ? "bg-[#f2f2f2]" : ""
+              }`}>
               Shop
             </a>
           </motion.li>
@@ -109,7 +99,7 @@ function Navbar() {
             <a href="#">
               <CiCircleQuestion
                 aria-label="Help"
-                className="hover:bg-[#B4BEC9] rounded-md"
+                className="hover:bg-[#f2f2f2] rounded-md"
               />
             </a>
           </li>
@@ -117,7 +107,7 @@ function Navbar() {
             <a href="#">
               <AiOutlineGlobal
                 aria-label="Global"
-                className="hover:bg-[#B4BEC9] rounded-md"
+                className="hover:bg-[#f2f2f2] rounded-md"
               />
             </a>
           </li>
@@ -125,7 +115,7 @@ function Navbar() {
             <a href="#">
               <IoPersonCircleOutline
                 aria-label="Profile"
-                className="hover:bg-[#B4BEC9] rounded-md"
+                className="hover:bg-[#f2f2f2] rounded-md"
               />
             </a>
           </li>
@@ -148,8 +138,7 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed w-full h-screen top-0 z-[98] bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
-          ></motion.div>
+            className="fixed w-full h-screen top-0 z-[98] bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"></motion.div>
         )}
       </AnimatePresence>
     </div>
@@ -179,8 +168,7 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            onMouseLeave={() => setHoverDropdown(false)}
-          >
+            onMouseLeave={() => setHoverDropdown(false)}>
             <div className="max-w-[1400px] mx-auto flex items-start gap-16">
               <div className="grid xl:grid-cols-4 grid-cols-3">
                 {NavData[activeCategory]?.map((item, index) => (
@@ -192,14 +180,12 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                       delay: index * 0.2,
                     }}
                     key={item.Model}
-                    className="px-4 py-2 list-none"
-                  >
+                    className="px-4 py-2 list-none">
                     <img src={item.NavImgURL} alt={item.Model} />
                     <p className="text-center">{item.Model}</p>
                     <a
                       href="#"
-                      className="flex justify-center items-center space-x-4"
-                    >
+                      className="flex justify-center items-center space-x-4">
                       <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
                         Learn
                       </span>
@@ -214,9 +200,8 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
               <ul className="space-y-1 pt-2">
                 {navLinks.map((link, index) => (
                   <li
-                    className="text-nowrap hover:underline decoration-2 underline-offset-4 duration-100 transform hover:scale-105"
-                    key={index}
-                  >
+                    className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                    key={index}>
                     <a href="#">{link}</a>
                   </li>
                 ))}
