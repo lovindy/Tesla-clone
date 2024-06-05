@@ -4,6 +4,7 @@ const NavData = {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
       Model: "Model S",
+      
     },
     {
       NavImgURL:
@@ -73,7 +74,7 @@ const NavData = {
   discover: [
     {
       NavImgURL:
-        "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Discover.png",
+        "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Charging.png",
       Model: "Discover Model 1",
     },
   ],

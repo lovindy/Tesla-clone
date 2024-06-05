@@ -148,7 +148,7 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed w-full h-screen top-0 z-[98] bg-black/50"
+            className="fixed w-full h-screen top-0 z-[98] bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
           ></motion.div>
         )}
       </AnimatePresence>
@@ -200,10 +200,10 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                       href="#"
                       className="flex justify-center items-center space-x-4"
                     >
-                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:decoration-2 decoration-black">
+                      <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
                         Learn
                       </span>
-                      <span className="text-black/50 text-[14px] underline-offset-2 underline hover:decoration-2 decoration-black">
+                      <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
                         Order
                       </span>
                     </a>
