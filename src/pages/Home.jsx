@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/Card"
+import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 function Home() {
@@ -7,11 +7,11 @@ function Home() {
     <div>
       {/* Navigation bar */}
       <div className="w-full absolute top-0">
-        <Navbar/>
+        <Navbar />
       </div>
       {/* Block of cards */}
       <div>
-      <Card />
+        <Card />
       </div>
       <Footer />
     </div>
