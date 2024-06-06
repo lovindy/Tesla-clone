@@ -125,7 +125,7 @@ function Navbar() {
             <a href="#">
               <CiCircleQuestion
                 aria-label="Help"
-                className="hover:bg-[#f2f2f2] rounded-md"
+                className="hover:bg-black hover:bg-opacity-10 rounded-md"
               />
             </a>
           </li>
@@ -133,7 +133,7 @@ function Navbar() {
             <a href="#">
               <AiOutlineGlobal
                 aria-label="Global"
-                className="hover:bg-[#f2f2f2] rounded-md"
+                className="hover:bg-black hover:bg-opacity-10 rounded-md"
               />
             </a>
           </li>
@@ -141,7 +141,7 @@ function Navbar() {
             <a href="#">
               <IoPersonCircleOutline
                 aria-label="Profile"
-                className="hover:bg-[#f2f2f2] rounded-md"
+                className="hover:bg-black hover:bg-opacity-10 rounded-md"
               />
             </a>
           </li>
