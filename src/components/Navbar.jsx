@@ -185,7 +185,7 @@ function Navbar() {
             exit="hidden"
             variants={menuVariants}
             transition={{ duration: 0.3 }}
-            className="bg-white top-0 fixed text-[20px] z-[101] p-4 w-full h-screen flex flex-col items-end">
+            className="bg-white top-0 fixed text-[20px] z-[101] p-4 w-full h-screen flex xl:hidden flex-col items-end">
             <button
               className="m-4 px-[1px] duration-300 border-none rounded-md hover:bg-[#f2f2f2]"
               onClick={closeMenu} // Close new menu on click
