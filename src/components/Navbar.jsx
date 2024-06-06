@@ -7,22 +7,53 @@ import DropDown from "./DropDown.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
-  const [hoverDropdown, setHoverDropdown] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(""); // Initialize as a string or null depending on your logic
+  const [state, setState] = useState({
+    hoverDropdown: false,
+    activeCategory: "",
+    menuOpen: false,
+  });
+
+  const { hoverDropdown, activeCategory, menuOpen } = state;
 
   const handleMouseEnter = (category) => {
-    setActiveCategory(category);
-    setHoverDropdown(true);
+    setState((prevState) => ({
+      ...prevState,
+      activeCategory: category,
+      hoverDropdown: true,
+    }));
+  };
+
+  const toggleMenu = () => {
+    setState((prevState) => ({
+      ...prevState,
+      menuOpen: !prevState.menuOpen,
+    }));
   };
 
   return (
     <div>
-      <div className="mx-auto relative z-[100] py-4 px-8 flex items-center justify-between">
+      <div
+        className={`mx-auto relative z-[100] py-4 px-8 flex items-center justify-between ${
+          menuOpen ? "bg-gray-100" : ""
+        }`}>
         <a href="#">
           <Tesla />
         </a>
 
-        <ul className="hidden lg:flex font-medium text-sm tracking-wider">
+        {/* Toggle button for menu */}
+        <button
+          className="block lg:hidden px-4 py-1 rounded-md bg-[#d2ddea]"
+          onClick={toggleMenu} // Toggle menu visibility on click
+        >
+          Menu
+        </button>
+
+        {/* Conditional rendering of navigation links */}
+        <ul
+          className={`lg:flex font-medium text-sm tracking-wider ${
+            menuOpen ? "" : "hidden"
+          }`}>
+          {/* Your existing navigation links */}
           {/* Vehicles */}
           <motion.li
             className="relative group"
@@ -115,18 +146,21 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <button className="block lg:hidden px-4 py-1 rounded-md bg-[#d2ddea]">
-          Menu
-        </button>
       </div>
 
+      {/* Your Dropdown component */}
       <DropDown
         hoverDropdown={hoverDropdown}
-        setHoverDropdown={setHoverDropdown}
+        setHoverDropdown={(value) =>
+          setState((prevState) => ({ ...prevState, hoverDropdown: value }))
+        }
         activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
+        setActiveCategory={(value) =>
+          setState((prevState) => ({ ...prevState, activeCategory: value }))
+        }
       />
 
+      {/* Overlay for dropdown */}
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
