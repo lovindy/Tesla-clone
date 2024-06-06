@@ -2,12 +2,13 @@ import React from "react";
 import cardsData from "../data/CardData";
 import ButtonTesla from "./ButtonDesign";
 function Card({ imgURL, title, financingText, leaseText, textColor }) {
+  const textColorClass = textColor === "white" ? "text-white" : "text-black";
   return (
     <div
       className="min-h-screen bg-cover bg-center p-20 flex justify-center items-center text-center"
       style={{ backgroundImage: `url("${imgURL}")` }}>
-      <div className="space-y-[450px]">
-        <div className={textColor}>
+      <div className="flex flex-col justify-between py-36 h-screen">
+        <div className={textColorClass}>
           <h2 className="font-medium text-5xl">{title}</h2>
           <p className="text-lg py-2 font-medium tracking-wider">
             {financingText}

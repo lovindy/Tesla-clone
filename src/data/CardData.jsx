@@ -6,7 +6,7 @@ const cardsData = [
     title: "Model 3",
     financingText: "From $31,490¹",
     leaseText: "After Est. Savings",
-    textColor: "white",
+    textColor: "black",
   },
   {
     imgURL:
@@ -14,7 +14,7 @@ const cardsData = [
     title: "Model Y",
     financingText: "From $33,990²",
     leaseText: "After Est. Savings",
-    textColor: "white",
+    textColor: "black",
   },
   {
     imgURL:
@@ -55,7 +55,6 @@ const cardsData = [
     imgURL:
       "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Powerwall-01-Desktop.jpg",
     title: "Powerwall",
-    financingText: "Produce Clean Energy From Your Roof",
   },
   {
     imgURL:
