@@ -3,17 +3,20 @@ import Tesla from "../assets/tesla.jsx";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { CiCircleQuestion } from "react-icons/ci";
-import DropDown from "./DropDown.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import DropDown from "./DropDown.jsx";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import CloseIcon from "@mui/icons-material/Close";
 
 function Navbar() {
   const [state, setState] = useState({
     hoverDropdown: false,
     activeCategory: "",
     menuOpen: false,
+    newMenuOpen: false, // State for new menu
   });
 
-  const { hoverDropdown, activeCategory, menuOpen } = state;
+  const { hoverDropdown, activeCategory, menuOpen, newMenuOpen } = state;
 
   const handleMouseEnter = (category) => {
     setState((prevState) => ({
@@ -26,9 +29,18 @@ function Navbar() {
   const toggleMenu = () => {
     setState((prevState) => ({
       ...prevState,
-      menuOpen: !prevState.menuOpen,
+      newMenuOpen: !prevState.newMenuOpen,
     }));
   };
+
+  const menuItems = [
+    { label: "Vehicles", showChevron: true },
+    { label: "Energy", showChevron: true },
+    { label: "Charging", showChevron: true },
+    { label: "Discover", showChevron: true },
+    { label: "Shop", showChevron: false },
+    { label: "Support", showChevron: false },
+  ];
 
   return (
     <div>
@@ -40,10 +52,12 @@ function Navbar() {
           <Tesla />
         </a>
 
-        {/* Toggle button for menu */}
+        {/* Toggle button for main menu */}
+
+        {/* Toggle button for new menu */}
         <button
           className="block lg:hidden px-4 py-1 rounded-md bg-[#d2ddea]"
-          onClick={toggleMenu} // Toggle menu visibility on click
+          onClick={toggleMenu} // Toggle new menu visibility on click
         >
           Menu
         </button>
@@ -120,6 +134,7 @@ function Navbar() {
           </motion.li>
         </ul>
 
+        {/* navigation links */}
         <ul className="hidden lg:flex space-x-4 text-2xl">
           <li>
             <a href="#">
@@ -147,6 +162,25 @@ function Navbar() {
           </li>
         </ul>
       </div>
+
+      {/* New menu */}
+      {newMenuOpen && (
+        <div className="bg-white top-0 fixed text-[20px] z-[101] p-4 w-full h-screen flex flex-col items-end">
+          <button className="m-4 px-[1px] duration-300 border-none rounded-md hover:bg-[#f2f2f2]">
+            <CloseIcon />
+          </button>
+          <ul className="w-full space-y-2 px-2 py-4">
+            {menuItems.map((item, index) => (
+              <li
+                key={index}
+                className="hover:bg-[#f2f2f2] duration-300 rounded-lg px-2 py-4 flex justify-between items-center">
+                <a href="#">{item.label}</a>
+                {item.showChevron && <ChevronRightIcon />}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Your Dropdown component */}
       <DropDown
