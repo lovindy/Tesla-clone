@@ -1,16 +1,17 @@
 const cardsData = [
   {
     imgURL:
-      "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.png",
-    title: "Model Y",
+      "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-LHD-v2.jpg",
+
+    title: "Model 3",
     financingText: "From $31,490¹",
     leaseText: "After Est. Savings",
     textColor: "white",
   },
   {
     imgURL:
-      "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-LHD-v2.jpg",
-    title: "Model 3",
+      "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.png",
+    title: "Model Y",
     financingText: "From $33,990²",
     leaseText: "After Est. Savings",
     textColor: "white",
