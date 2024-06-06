@@ -223,7 +223,7 @@ const DropDown = ({
                   <div className="grid grid-cols-3 gap-8">
                     {navLinks.discover.map((block, blockIndex) => (
                       <ul
-                        className="space-y-1 pt-2 text-start"
+                        className="space-y-2 pt-4 text-start text-[14px] font-medium"
                         key={blockIndex}>
                         <li className="text-[#737578] mb-2">{block.main}</li>
                         {block.links.map((link, linkIndex) => (
