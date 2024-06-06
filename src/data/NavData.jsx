@@ -36,68 +36,61 @@ const NavData = {
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png",
-      Model: "Energy Model 1",
+      Model: "Solar Panels",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Roof.png",
-      Model: "Energy Model 2",
+      Model: "Solar Roof",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png",
-      Model: "Energy Model 3",
+      Model: "Powerwall",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png",
-      Model: "Energy Model 4",
+      Model: "Megapack",
     },
   ],
   charging: [
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png",
-      Model: "Charging Model 1",
+      Model: "Charging",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png",
-      Model: "Charging Model 2",
+      Model: "Home Charging",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png",
-      Model: "Charging Model 3",
-    },
-  ],
-  discover: [
-    {
-      NavImgURL:
-        "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Charging.png",
-      Model: "Discover Model 1",
+      Model: "Supercharging",
     },
   ],
   shop: [
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Charging.png",
-      Model: "Shop Model 1",
+      Model: "Charging",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Vehicle-Accessories.png",
-      Model: "Shop Model 2",
+      Model: "Vehicle Accessories",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Apparel.png",
-      Model: "Shop Model 3",
+      Model: "Apparel",
     },
     {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Lifestyle.png",
-      Model: "Shop Model 4",
+      Model: "Lifestyle",
     },
   ],
 };

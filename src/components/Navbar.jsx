@@ -250,7 +250,9 @@ const DropDown = ({
                       key={item.Model}
                       className="px-4 py-2 list-none">
                       <img src={item.NavImgURL} alt={item.Model} />
-                      <p className="text-center">{item.Model}</p>
+                      <p className="text-center font-medium text-lg">
+                        {item.Model}
+                      </p>
                     </motion.li>
                   ))}
                 </div>
@@ -268,7 +270,9 @@ const DropDown = ({
                         key={item.Model}
                         className="px-4 py-2 list-none">
                         <img src={item.NavImgURL} alt={item.Model} />
-                        <p className="text-center">{item.Model}</p>
+                        <p className="text-center text-lg font-medium">
+                          {item.Model}
+                        </p>
                         <a
                           href="#"
                           className="flex justify-center items-center space-x-4">
