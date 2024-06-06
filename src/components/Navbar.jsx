@@ -146,17 +146,29 @@ function Navbar() {
 }
 
 const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
-  const navLinks = [
-    "Inventory",
-    "Used Cars",
-    "Demo Drive",
-    "Trade-in",
-    "Compare",
-    "Help Me Charge",
-    "Fleet",
-    "Semi",
-    "Roadster",
-  ];
+  const navLinks = {
+    vehicles: [
+      "Inventory",
+      "Used Cars",
+      "Demo Drive",
+      "Trade-in",
+      "Compare",
+      "Help Me Charge",
+      "Fleet",
+      "Semi",
+      "Roadster",
+    ],
+    energy: ["Repair", "Pre-owned", "Test Drive", "Insurance"],
+    charging: [
+      "Resources",
+      "Demo Drive",
+      "Insurance",
+      "Video Guides",
+      "Customer Stories",
+      "Events",
+    ],
+    discover: ["Explore", "Innovation", "Technology"],
+  };
 
   return (
     <>
@@ -170,42 +182,73 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
             onMouseLeave={() => setHoverDropdown(false)}>
             <div className="max-w-[1400px] mx-auto flex items-start gap-16">
-              <div className="grid xl:grid-cols-4 grid-cols-3">
-                {NavData[activeCategory]?.map((item, index) => (
-                  <motion.li
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.2,
-                    }}
-                    key={item.Model}
-                    className="px-4 py-2 list-none">
-                    <img src={item.NavImgURL} alt={item.Model} />
-                    <p className="text-center">{item.Model}</p>
-                    <a
-                      href="#"
-                      className="flex justify-center items-center space-x-4">
-                      <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
-                        Learn
-                      </span>
-                      <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
-                        Order
-                      </span>
-                    </a>
-                  </motion.li>
-                ))}
-              </div>
-              <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
-              <ul className="space-y-1 pt-2">
-                {navLinks.map((link, index) => (
-                  <li
-                    className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
-                    key={index}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-              </ul>
+              {activeCategory === "discover" ? (
+                <ul className="space-y-1 pt-2">
+                  {navLinks.discover.map((link, index) => (
+                    <li
+                      className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                      key={index}>
+                      <a href="#">{link}</a>
+                    </li>
+                  ))}
+                </ul>
+              ) : activeCategory === "shop" ? (
+                <div className="grid xl:grid-cols-4 grid-cols-3">
+                  {NavData[activeCategory]?.map((item, index) => (
+                    <motion.li
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.2,
+                      }}
+                      key={item.Model}
+                      className="px-4 py-2 list-none">
+                      <img src={item.NavImgURL} alt={item.Model} />
+                      <p className="text-center">{item.Model}</p>
+                    </motion.li>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <div className="grid xl:grid-cols-4 grid-cols-3">
+                    {NavData[activeCategory]?.map((item, index) => (
+                      <motion.li
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.6,
+                          delay: index * 0.2,
+                        }}
+                        key={item.Model}
+                        className="px-4 py-2 list-none">
+                        <img src={item.NavImgURL} alt={item.Model} />
+                        <p className="text-center">{item.Model}</p>
+                        <a
+                          href="#"
+                          className="flex justify-center items-center space-x-4">
+                          <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
+                            Learn
+                          </span>
+                          <span className="text-black/50 text-[14px] duration-500 hover:text-black underline-offset-2 underline hover:decoration-2 decoration-black">
+                            Order
+                          </span>
+                        </a>
+                      </motion.li>
+                    ))}
+                  </div>
+                  <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
+                  <ul className="space-y-1 pt-2">
+                    {navLinks[activeCategory]?.map((link, index) => (
+                      <li
+                        className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                        key={index}>
+                        <a href="#">{link}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </motion.div>
         )}
