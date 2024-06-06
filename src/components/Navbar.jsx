@@ -69,7 +69,7 @@ function Navbar() {
 
         {/* Toggle button for new menu */}
         <button
-          className="block lg:hidden px-4 py-1 rounded-md bg-[#d2ddea]"
+          className="block lg:hidden px-4 py-1 rounded-md bg-[#7cbbe0]"
           onClick={toggleMenu} // Toggle new menu visibility on click
         >
           Menu
