@@ -208,7 +208,7 @@ const DropDown = ({
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-8 px-36 shadow-2xl"
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-12 px-36 shadow-2xl"
             initial={{ opacity: 0, y: -40, display: "none" }}
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
@@ -283,10 +283,10 @@ const DropDown = ({
                     ))}
                   </div>
                   <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
-                  <ul className="space-y-2 pt-2 flex flex-col items-start">
+                  <ul className="space-y-2 pt-2 flex flex-col items-start text-[14px] font-medium">
                     {navLinks[activeCategory]?.map((link, index) => (
                       <li
-                        className="relative overflow-x-hidden  text-nowrap group"
+                        className="relative overflow-x-hidden text-nowrap group"
                         key={index}>
                         <a href="#">{link}</a>
                         <span className="w-0 group-hover:w-full absolute left-0 bottom-0 duration-150 bg-black h-0.5"></span>
