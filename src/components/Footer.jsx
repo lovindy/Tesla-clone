@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FooterData from "../assets/FooterData";
+import FooterData from "../data/FooterData";
 import { motion } from "framer-motion";
 
 const Footer = () => {

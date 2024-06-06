@@ -3,7 +3,7 @@ import Tesla from "../assets/tesla.jsx";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { CiCircleQuestion } from "react-icons/ci";
-import NavData from "../assets/NavData.jsx";
+import NavData from "../data/NavData";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
