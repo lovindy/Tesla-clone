@@ -158,14 +158,23 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
       "Semi",
       "Roadster",
     ],
-    energy: ["Repair", "Pre-owned", "Test Drive", "Insurance"],
+    energy: [
+      "Schedule a Consultation",
+      "Why Solar",
+      "Incentives",
+      "Support",
+      "Partner with Tesla",
+      "Commercial",
+      "Utilities",
+    ],
     charging: [
-      "Resources",
-      "Demo Drive",
-      "Insurance",
-      "Video Guides",
-      "Customer Stories",
-      "Events",
+      "Help Me Charge",
+      "Charging Calculator",
+      "Charging With NACS",
+      "Supercharger Voting",
+      "Host a Supercharger",
+      "Commercial Charging",
+      "Host Wall Connectors",
     ],
     discover: [
       {
@@ -210,9 +219,9 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                   <div className="grid grid-cols-3 gap-8">
                     {navLinks.discover.map((block, blockIndex) => (
                       <ul
-                        className="space-y-1 pt-2 text-center"
+                        className="space-y-1 pt-2 text-start"
                         key={blockIndex}>
-                        <li className="font-bold mb-2">{block.main}</li>
+                        <li className="text-[#737578] mb-2">{block.main}</li>
                         {block.links.map((link, linkIndex) => (
                           <li
                             className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
@@ -270,10 +279,10 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                     ))}
                   </div>
                   <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
-                  <ul className="space-y-1 pt-2">
+                  <ul className="space-y-2 pt-2">
                     {navLinks[activeCategory]?.map((link, index) => (
                       <li
-                        className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                        className="text-nowrap hover:underline underline-offset-4 decoration-[1px] duration-100 transform hover:scale-105"
                         key={index}>
                         <a href="#">{link}</a>
                       </li>
