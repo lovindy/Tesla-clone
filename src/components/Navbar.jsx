@@ -207,13 +207,13 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-8 px-36"
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-8 px-36 shadow-2xl"
             initial={{ opacity: 0, y: -40, display: "none" }}
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
             onMouseLeave={() => setHoverDropdown(false)}>
-            <div className="max-w-[1400px] mx-auto flex items-start gap-16">
+            <div className="max-w-[1400px] mx-auto flex items-start justify-between gap-12">
               {activeCategory === "discover" ? (
                 <div className="w-full flex justify-center">
                   <div className="grid grid-cols-3 gap-8">
@@ -282,7 +282,7 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                   <ul className="space-y-2 pt-2">
                     {navLinks[activeCategory]?.map((link, index) => (
                       <li
-                        className="text-nowrap hover:underline underline-offset-4 decoration-[1px] duration-100 transform hover:scale-105"
+                        className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
                         key={index}>
                         <a href="#">{link}</a>
                       </li>
