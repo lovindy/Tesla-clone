@@ -17,12 +17,12 @@ function Navbar() {
 
   return (
     <div>
-      <div className="mx-auto relative z-[100] py-4 px-4 flex items-center justify-between">
+      <div className="mx-auto relative z-[100] py-4 px-8 flex items-center justify-between">
         <a href="#">
           <Tesla />
         </a>
 
-        <ul className="hidden lg:flex font-medium text-sm">
+        <ul className="hidden lg:flex font-medium text-sm tracking-wider">
           {/* Vehicles */}
           <motion.li
             className="relative group"
@@ -208,7 +208,7 @@ const DropDown = ({
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-12 px-36 shadow-2xl"
+            className="w-full z-[99] fixed top-0 bg-white pt-36 pb-12 px-36 shadow-2xl tracking-wider"
             initial={{ opacity: 0, y: -40, display: "none" }}
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
@@ -220,15 +220,15 @@ const DropDown = ({
             <div className="max-w-[1400px] mx-auto flex items-start justify-between gap-12">
               {activeCategory === "discover" ? (
                 <div className="w-full flex justify-center">
-                  <div className="grid grid-cols-3 gap-8">
+                  <div className="grid grid-cols-3 gap-16">
                     {navLinks.discover.map((block, blockIndex) => (
                       <ul
-                        className="space-y-2 pt-4 text-start text-[14px] font-medium"
+                        className="space-y-3 text-start text-[15px]"
                         key={blockIndex}>
-                        <li className="text-[#737578] mb-2">{block.main}</li>
+                        <li className="text-[#737578] mb-5">{block.main}</li>
                         {block.links.map((link, linkIndex) => (
                           <li
-                            className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                            className="font-medium text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
                             key={linkIndex}>
                             <a href="#">{link}</a>
                           </li>
