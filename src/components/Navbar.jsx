@@ -26,8 +26,7 @@ function Navbar() {
           {/* Vehicles */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("vehicles")}
-            onMouseLeave={() => activeCategory("")}>
+            onMouseEnter={() => handleMouseEnter("vehicles")}>
             <a
               href="#vehicles"
               className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
@@ -40,8 +39,7 @@ function Navbar() {
           {/* Energy */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("energy")}
-            onMouseLeave={() => activeCategory("")}>
+            onMouseEnter={() => handleMouseEnter("energy")}>
             <a
               href="#energy"
               className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
@@ -54,8 +52,7 @@ function Navbar() {
           {/* Charging */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("charging")}
-            onMouseLeave={() => activeCategory("")}>
+            onMouseEnter={() => handleMouseEnter("charging")}>
             <a
               href="#charging"
               className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
@@ -68,8 +65,7 @@ function Navbar() {
           {/* Discover */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("discover")}
-            onMouseLeave={() => activeCategory("")}>
+            onMouseEnter={() => handleMouseEnter("discover")}>
             <a
               href="#discover"
               className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
@@ -82,8 +78,7 @@ function Navbar() {
           {/* Shop */}
           <motion.li
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("shop")}
-            onMouseLeave={() => activeCategory("")}>
+            onMouseEnter={() => handleMouseEnter("shop")}>
             <a
               href="#shop"
               className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
@@ -129,6 +124,7 @@ function Navbar() {
         hoverDropdown={hoverDropdown}
         setHoverDropdown={setHoverDropdown}
         activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
       />
 
       <AnimatePresence>
@@ -145,7 +141,12 @@ function Navbar() {
   );
 }
 
-const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
+const DropDown = ({
+  hoverDropdown,
+  setHoverDropdown,
+  activeCategory,
+  setActiveCategory,
+}) => {
   const navLinks = {
     vehicles: [
       "Inventory",
@@ -212,7 +213,10 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
             animate={{ opacity: 1, y: 0, display: "block" }}
             exit={{ opacity: 0, y: -40, display: "none" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            onMouseLeave={() => setHoverDropdown(false)}>
+            onMouseLeave={() => {
+              setHoverDropdown(false);
+              setActiveCategory("");
+            }}>
             <div className="max-w-[1400px] mx-auto flex items-start justify-between gap-12">
               {activeCategory === "discover" ? (
                 <div className="w-full flex justify-center">
@@ -279,12 +283,13 @@ const DropDown = ({ hoverDropdown, setHoverDropdown, activeCategory }) => {
                     ))}
                   </div>
                   <span className="w-[1px] bg-gray-200 h-[30vh]"></span>
-                  <ul className="space-y-2 pt-2">
+                  <ul className="space-y-2 pt-2 flex flex-col items-start">
                     {navLinks[activeCategory]?.map((link, index) => (
                       <li
-                        className="text-nowrap hover:underline underline-offset-4 duration-100 transform hover:scale-105"
+                        className="relative overflow-x-hidden  text-nowrap group"
                         key={index}>
                         <a href="#">{link}</a>
+                        <span className="w-0 group-hover:w-full absolute left-0 bottom-0 duration-150 bg-black h-0.5"></span>
                       </li>
                     ))}
                   </ul>
