@@ -4,7 +4,6 @@ const NavData = {
       NavImgURL:
         "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
       Model: "Model S",
-      
     },
     {
       NavImgURL:

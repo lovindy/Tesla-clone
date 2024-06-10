@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavData from "../data/NavData";
+import { dropdownVariants } from "../utility/Navigation";
 const DropDown = ({
   hoverDropdown,
   setHoverDropdown,
@@ -69,10 +70,11 @@ const DropDown = ({
         {hoverDropdown && (
           <motion.div
             className="w-full z-[99] fixed top-0 bg-white pt-36 pb-12 px-36 shadow-2xl tracking-wider"
-            initial={{ opacity: 0, y: -40, display: "none" }}
-            animate={{ opacity: 1, y: 0, display: "block" }}
-            exit={{ opacity: 0, y: -40, display: "none" }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            variants={dropdownVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={dropdownVariants.transition}
             onMouseLeave={() => {
               setHoverDropdown(false);
               setActiveCategory("");

@@ -17,6 +17,13 @@ export const navigationVariants = {
 };
 
 export const dropdownVariants = {
+  initial: { opacity: 0, y: -40, display: "none" },
+  animate: { opacity: 1, y: 0, display: "block" },
+  exit: { opacity: 0, y: -40, display: "none" },
+  transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] },
+};
+
+export const complexDisplayVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
