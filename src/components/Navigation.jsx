@@ -5,16 +5,15 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { CiCircleQuestion } from "react-icons/ci";
 import { motion, AnimatePresence } from "framer-motion";
 import DropDown from "./DropDown.jsx";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import CloseIcon from "@mui/icons-material/Close";
-import { menuVariants, overlayBackgroundVariants } from "../utility/Navigation";
+import Menu from "./Menu.jsx";
+import { overlayBackgroundVariants } from "../utility/Navigation";
 
 function Navbar() {
   const [state, setState] = useState({
     hoverDropdown: false,
     activeCategory: "",
     menuOpen: false,
-    newMenuOpen: false, // State for new menu
+    newMenuOpen: false,
   });
 
   const { hoverDropdown, activeCategory, menuOpen, newMenuOpen } = state;
@@ -41,16 +40,6 @@ function Navbar() {
     }));
   };
 
-  const menuItems = [
-    { label: "Vehicles", showChevron: true },
-    { label: "Energy", showChevron: true },
-    { label: "Charging", showChevron: true },
-    { label: "Discover", showChevron: true },
-    { label: "Shop" },
-    { label: "Support" },
-  ];
-
-  // Variants for animation
   return (
     <div>
       <div
@@ -61,87 +50,36 @@ function Navbar() {
           <Tesla />
         </a>
 
-        {/* Toggle button for menu */}
         <button
           className="block lg:hidden px-4 py-1 rounded-md bg-black/5"
-          onClick={toggleMenu} // Toggle menu visibility on click
-        >
+          onClick={toggleMenu}>
           Menu
         </button>
 
-        {/* Conditional rendering of navigation links */}
+        {/* Mobile menu */}
         <ul
           className={`lg:flex font-medium text-sm tracking-wider ${
             menuOpen ? "" : "hidden"
           }`}>
-          {/* Your existing navigation links */}
-          {/* Vehicles */}
-          <motion.li
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter("vehicles")}>
-            <a
-              href="#vehicles"
-              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "vehicles" ? "bg-[#f2f2f2]" : ""
-              }`}>
-              Vehicles
-            </a>
-          </motion.li>
-
-          {/* Energy */}
-          <motion.li
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter("energy")}>
-            <a
-              href="#energy"
-              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "energy" ? "bg-[#f2f2f2]" : ""
-              }`}>
-              Energy
-            </a>
-          </motion.li>
-
-          {/* Charging */}
-          <motion.li
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter("charging")}>
-            <a
-              href="#charging"
-              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "charging" ? "bg-[#f2f2f2]" : ""
-              }`}>
-              Charging
-            </a>
-          </motion.li>
-
-          {/* Discover */}
-          <motion.li
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter("discover")}>
-            <a
-              href="#discover"
-              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "discover" ? "bg-[#f2f2f2]" : ""
-              }`}>
-              Discover
-            </a>
-          </motion.li>
-
-          {/* Shop */}
-          <motion.li
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter("shop")}>
-            <a
-              href="#shop"
-              className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
-                activeCategory === "shop" ? "bg-[#f2f2f2]" : ""
-              }`}>
-              Shop
-            </a>
-          </motion.li>
+          {["vehicles", "energy", "charging", "discover", "shop"].map(
+            (category) => (
+              <motion.li
+                key={category}
+                className="relative group"
+                onMouseEnter={() => handleMouseEnter(category)}>
+                <a
+                  href={`#${category}`}
+                  className={`hover:bg-[#f2f2f2] duration-500 px-5 py-[8px] rounded-md ${
+                    activeCategory === category ? "bg-[#f2f2f2]" : ""
+                  }`}>
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </a>
+              </motion.li>
+            )
+          )}
         </ul>
 
-        {/* navigation links */}
+        {/* Right side icons */}
         <ul className="hidden lg:flex space-x-4 text-2xl">
           <li>
             <a href="#">
@@ -170,37 +108,12 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* menu */}
-      <AnimatePresence>
-        {newMenuOpen && (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={menuVariants}
-            transition={menuVariants.transition}
-            className="bg-white top-0 fixed text-[20px] z-[101] p-4 w-full h-screen flex xl:hidden flex-col items-end">
-            <button
-              className="m-4 px-[1px] duration-300 border-none rounded-md hover:bg-[#f2f2f2]"
-              onClick={closeMenu} // Close new menu on click
-            >
-              <CloseIcon />
-            </button>
-            <ul className="w-full space-y-2 px-2 py-4">
-              {menuItems.map((item, index) => (
-                <li
-                  key={index}
-                  className="hover:bg-[#f2f2f2] duration-300 rounded-lg px-2 py-4 flex justify-between items-center">
-                  <a href="#">{item.label}</a>
-                  {item.showChevron && <ChevronRightIcon />}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Menu
+        newMenuOpen={newMenuOpen}
+        toggleMenu={toggleMenu}
+        closeMenu={closeMenu}
+      />
 
-      {/* Your Dropdown component */}
       <DropDown
         hoverDropdown={hoverDropdown}
         setHoverDropdown={(value) =>
@@ -212,7 +125,6 @@ function Navbar() {
         }
       />
 
-      {/* Overlay for dropdown */}
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
