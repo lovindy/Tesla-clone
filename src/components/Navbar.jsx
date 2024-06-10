@@ -66,11 +66,9 @@ function Navbar() {
           <Tesla />
         </a>
 
-        {/* Toggle button for main menu */}
-
-        {/* Toggle button for new menu */}
+        {/* Toggle button for menu */}
         <button
-          className="block lg:hidden px-4 py-1.5 text-[12px] font-medium tracking-wider rounded-md bg-[#7cbbe0]"
+          className="block lg:hidden px-4 py-1 rounded-md bg-black/5"
           onClick={toggleMenu} // Toggle new menu visibility on click
         >
           Menu
@@ -188,7 +186,7 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* New menu */}
+      {/* menu */}
       <AnimatePresence>
         {newMenuOpen && (
           <motion.div
