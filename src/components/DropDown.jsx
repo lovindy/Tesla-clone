@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavData from "../data/NavData";
-import { dropdownVariants } from "../utility/Navigation";
+import { dropdownVariants, dropdownItemVariants } from "../utility/Navigation";
 const DropDown = ({
   hoverDropdown,
   setHoverDropdown,
@@ -103,12 +103,10 @@ const DropDown = ({
                 <div className="grid xl:grid-cols-4 grid-cols-3">
                   {NavData[activeCategory]?.map((item, index) => (
                     <motion.li
-                      initial={{ y: -20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        duration: 0.6,
-                        delay: index * 0.2,
-                      }}
+                      initial="hidden"
+                      animate="visible"
+                      custom={index}
+                      variants={dropdownItemVariants}
                       key={item.Model}
                       className="px-4 py-2 list-none">
                       <img src={item.NavImgURL} alt={item.Model} />

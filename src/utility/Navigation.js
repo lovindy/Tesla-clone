@@ -23,6 +23,18 @@ export const dropdownVariants = {
   transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] },
 };
 
+export const dropdownItemVariants = {
+  hidden: { y: -20, opacity: 0 },
+  visible: (index) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      delay: index * 0.2,
+    },
+  }),
+};
+
 export const complexDisplayVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
