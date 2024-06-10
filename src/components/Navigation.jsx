@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import DropDown from "./DropDown.jsx";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import CloseIcon from "@mui/icons-material/Close";
+import { menuVariants, overlayBackgroundVariants } from "../utility/Navigation";
 
 function Navbar() {
   const [state, setState] = useState({
@@ -50,11 +51,6 @@ function Navbar() {
   ];
 
   // Variants for animation
-  const menuVariants = {
-    hidden: { opacity: 0, scale: 0.3 },
-    visible: { opacity: 1, scale: 1 },
-  };
-
   return (
     <div>
       <div
@@ -182,7 +178,7 @@ function Navbar() {
             animate="visible"
             exit="hidden"
             variants={menuVariants}
-            transition={{ duration: 0.3 }}
+            transition={menuVariants.transition}
             className="bg-white top-0 fixed text-[20px] z-[101] p-4 w-full h-screen flex xl:hidden flex-col items-end">
             <button
               className="m-4 px-[1px] duration-300 border-none rounded-md hover:bg-[#f2f2f2]"
@@ -220,10 +216,11 @@ function Navbar() {
       <AnimatePresence>
         {hoverDropdown && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            variants={overlayBackgroundVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={overlayBackgroundVariants.transition}
             className="fixed w-full h-screen top-0 z-[98] bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"></motion.div>
         )}
       </AnimatePresence>
